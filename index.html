@@ -3,322 +3,229 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tabella Offerta Tecnica – AQ Manutenzione AREA Sant'Elia</title>
+<title>Offerta Tecnica – IS "D'Adda" Varallo (VC) – Provincia di Vercelli</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --blu: #003366;
-    --blu-mid: #1a5276;
-    --blu-light: #d6eaf8;
-    --verde: #145a32;
-    --verde-light: #d5f5e3;
-    --marrone: #6e2f1a;
-    --marrone-light: #fde8d8;
-    --grigio-chiaro: #f4f6f9;
-    --grigio-bordo: #d0d8e4;
-    --grigio-sez: #e0e4ea;
-    --grigio-parent: #eaecf0;
-    --accent: #e8a020;
-    --testo: #1a1a2e;
-    --bianco: #ffffff;
+    --blu:      #003366;
+    --blu-mid:  #1a5276;
+    --blu-bg:   #d6eaf8;
+    --verde:    #145a32;
+    --verde-bg: #d5f5e3;
+    --terra:    #6e2f1a;
+    --terra-bg: #fde8d8;
+    --accent:   #e8a020;
+    --grigio1:  #f4f6f9;
+    --grigio2:  #e0e4ea;
+    --grigio3:  #eaecf0;
+    --bordo:    #d0d8e4;
+    --testo:    #1a1a2e;
+    --bianco:   #ffffff;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'Source Sans 3', Arial, sans-serif;
-    background: var(--grigio-chiaro);
-    color: var(--testo);
-    font-size: 13px;
-    line-height: 1.55;
-  }
-  .page-wrap { max-width: 1200px; margin: 0 auto; padding: 32px 24px 48px; }
+  body { font-family: 'Source Sans 3', sans-serif; background: var(--grigio1); color: var(--testo); font-size: 13px; line-height: 1.65; }
 
-  /* HEADER */
-  .page-header {
-    background: var(--blu);
-    color: #fff;
-    padding: 22px 28px 18px;
-    border-radius: 6px 6px 0 0;
-    border-bottom: 4px solid var(--accent);
-    margin-bottom: 0;
-  }
-  .page-header h1 { font-family: 'Libre Baskerville', serif; font-size: 17px; font-weight: 700; margin-bottom: 5px; }
-  .page-header .meta { font-size: 12px; color: #a8c8e8; font-weight: 300; line-height: 1.7; }
+  /* ─── HEADER ─── */
+  header { background: var(--blu); color: var(--bianco); padding: 28px 40px 22px; border-bottom: 4px solid var(--accent); }
+  header h1 { font-family: 'Libre Baskerville', serif; font-size: 17px; font-weight: 700; letter-spacing: .02em; margin-bottom: 6px; }
+  header .meta { font-size: 12px; color: #a8c8e8; font-weight: 300; }
 
-  /* SCHEDA REDAZIONALE */
-  .scheda-box {
-    background: #fffbf0;
-    border: 1px solid #fde8a0;
-    border-radius: 0;
-    padding: 14px 20px;
-    margin-bottom: 0;
-    font-size: 12.5px;
-  }
-  .scheda-box h2 {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--blu);
-    margin-bottom: 10px;
-    border-bottom: 1px solid #fde8a0;
-    padding-bottom: 6px;
-  }
-  .scheda-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px 20px; }
-  .scheda-item { }
-  .scheda-item .label { font-weight: 700; color: #7d5a00; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.03em; }
-  .scheda-item .value { color: #3a3a3a; }
-  .scheda-note { margin-top: 10px; font-size: 12px; color: #5a4000; background: #fef9e7; border-left: 3px solid var(--accent); padding: 7px 10px; }
+  /* ─── WRAPPER ─── */
+  .wrapper { max-width: 1200px; margin: 0 auto; padding: 28px 40px 48px; }
 
-  /* RIEPILOGO PUNTEGGI */
-  .riepilogo {
-    background: var(--blu);
-    color: #fff;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    font-size: 13px;
-    flex-wrap: wrap;
-  }
-  .riepilogo .label { font-weight: 300; color: #a8c8e8; margin-right: 4px; }
-  .badge-riepilogo {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: rgba(255,255,255,0.12);
-    border-radius: 4px;
-    padding: 4px 10px;
-    font-weight: 700;
-  }
-  .badge-riepilogo .tipo {
-    font-size: 10px;
-    padding: 1px 5px;
-    border-radius: 3px;
-    font-weight: 700;
-  }
-  .tipo-d { background: var(--blu-light); color: var(--blu-mid); }
-  .tipo-t { background: var(--marrone-light); color: var(--marrone); }
-  .sep { color: #a8c8e8; font-size: 18px; }
-  .totale-badge { background: var(--accent); color: var(--blu); border-radius: 4px; padding: 4px 12px; font-weight: 700; font-size: 13px; }
+  /* ─── STRINGA ─── */
+  .stringa-box { background: var(--bianco); border-left: 4px solid var(--accent); border-radius: 0 6px 6px 0; padding: 14px 18px; margin-bottom: 22px; font-size: 13px; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+  .stringa-box h2 { font-size: 12px; font-weight: 700; color: var(--blu-mid); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 8px; }
+  .stringa-box p { line-height: 1.8; color: #1a1a2e; }
 
-  /* TABELLA */
-  .table-wrap { overflow-x: auto; }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 12.5px;
-  }
-  /* Header */
-  thead tr th {
-    background: var(--blu);
-    color: #fff;
-    padding: 9px 10px;
-    text-align: left;
-    font-weight: 600;
-    font-size: 12px;
-    border-right: 1px solid #1a4a7a;
-    white-space: nowrap;
-  }
-  thead tr th:last-child { border-right: none; }
+  /* ─── SCHEDE ─── */
+  .card { background: var(--bianco); border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,.07); margin-bottom: 20px; overflow: hidden; }
+  .card-header { background: var(--blu); color: var(--bianco); padding: 10px 18px; font-size: 12px; font-weight: 700; letter-spacing: .04em; display: flex; align-items: center; gap: 10px; }
+  .card-header .num { background: var(--accent); color: var(--blu); font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 3px; }
+  .card-body { padding: 16px 20px; }
 
-  /* colonne */
-  td.col-accent { width: 7px; padding: 0; }
-  td.col-num { width: 60px; padding: 7px 8px; font-weight: 700; vertical-align: middle; text-align: center; }
-  td.col-titolo { width: 200px; padding: 7px 10px; vertical-align: top; font-weight: 600; }
-  td.col-contenuto { padding: 7px 10px; vertical-align: top; }
-  td.col-punteggio { width: 90px; padding: 7px 8px; vertical-align: middle; text-align: center; }
-  td.col-doc { width: 260px; padding: 7px 10px; vertical-align: top; font-size: 12px; }
+  /* ─── SCHEDA REDAZIONALE ─── */
+  .red-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; font-size: 12.5px; }
+  .red-item label { font-weight: 700; color: var(--blu-mid); display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 3px; }
+  .red-item span { color: #333; }
+  .nota-red { grid-column: 1/-1; background: #fffbf0; border: 1px solid #fde8a0; border-radius: 4px; padding: 10px 14px; font-size: 12px; color: #5a4000; margin-top: 4px; }
 
-  /* RIGA SEZIONE */
-  tr.row-sez td {
-    background: var(--grigio-sez);
-    color: #1a1a2e;
-    font-weight: 700;
-    font-size: 12px;
-    padding: 7px 12px;
-    letter-spacing: 0.02em;
-    border-top: 2px solid #c0c8d8;
-    border-bottom: 1px solid #c0c8d8;
-  }
-  tr.row-sez td.col-accent { background: var(--grigio-sez); }
+  /* ─── RIEPILOGO ─── */
+  .riepilogo { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; font-size: 13px; margin-bottom: 20px; }
+  .riepilogo .badge-r { border-radius: 5px; padding: 8px 16px; font-weight: 700; text-align: center; min-width: 90px; }
+  .riepilogo .badge-r .val { font-size: 20px; display: block; }
+  .riepilogo .badge-r .lbl { font-size: 10px; font-weight: 600; letter-spacing: .06em; }
+  .riepilogo .op { font-size: 20px; color: #999; font-weight: 300; }
+  .riepilogo .totale { background: var(--blu); color: white; border-radius: 5px; padding: 8px 18px; font-weight: 700; text-align: center; }
+  .riepilogo .totale .val { font-size: 20px; display: block; }
+  .riepilogo .totale .lbl { font-size: 10px; font-weight: 600; letter-spacing: .06em; }
 
-  /* RIGA PARENT */
-  tr.row-parent td {
-    background: var(--grigio-parent);
-    color: #1a1a2e;
-    font-weight: 700;
-    border-bottom: 1px solid #d0d8e4;
-    vertical-align: middle;
-  }
-  tr.row-parent td.col-accent { background: var(--grigio-parent); }
-  .parent-num {
-    font-size: 14px;
-    font-weight: 800;
-    color: var(--blu-mid);
-  }
-  .parent-tot {
-    display: inline-block;
-    background: var(--grigio-sez);
-    border: 1px solid #b8c4d4;
-    border-radius: 4px;
-    padding: 2px 8px;
-    font-size: 11.5px;
-    color: #444;
-    white-space: nowrap;
-  }
+  /* ─── TABELLA ─── */
+  .table-wrap { overflow-x: auto; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,.07); }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
 
-  /* RIGA DATI normale */
-  tr.row-data-even td { background: var(--grigio-chiaro); }
-  tr.row-data-odd td { background: var(--bianco); }
-  tr.row-data-even td, tr.row-data-odd td {
-    border-bottom: 1px solid #e4eaf2;
+  /* Header colonne */
+  table thead th { background: var(--blu); color: var(--bianco); padding: 10px 12px; text-align: left; font-weight: 600; font-size: 11.5px; border-right: 1px solid #1a4a80; white-space: nowrap; }
+  table thead th:last-child { border-right: none; }
+  table thead th.col-a { width: 8px; padding: 0; }
+  table thead th.col-b { width: 68px; }
+  table thead th.col-c { width: 200px; }
+  table thead th.col-d { }
+  table thead th.col-e { width: 100px; text-align: center; }
+  table thead th.col-f { width: 270px; }
+
+  /* Celle comuni */
+  table td { padding: 10px 12px; border-bottom: 1px solid var(--bordo); vertical-align: top; }
+  table td.col-a { padding: 0; width: 8px; }
+
+  /* Riga sezione */
+  tr.row-section td { background: var(--grigio2); font-weight: 700; font-size: 12px; color: #1a1a2e; letter-spacing: .04em; padding: 8px 14px; }
+  tr.row-section td.col-a { background: var(--grigio2); }
+
+  /* Riga parent */
+  tr.row-parent td { background: var(--grigio3); }
+  tr.row-parent td.col-num { font-weight: 700; font-size: 13px; color: #333; }
+  tr.row-parent td.col-title { font-weight: 700; font-size: 12.5px; color: #222; }
+  tr.row-parent td.col-score { text-align: center; font-weight: 700; color: #444; font-size: 12px; }
+  tr.row-parent td.col-doc { }
+
+  /* Riga normale (criterio principale senza sub) */
+  tr.row-normal.alt td { background: var(--grigio1); }
+  tr.row-normal td { background: var(--bianco); }
+  tr.row-normal td.col-a { }
+  tr.row-normal td.col-num { font-weight: 700; font-size: 13px; }
+
+  /* Riga sub-criterio */
+  tr.row-sub.alt td { background: var(--grigio1); }
+  tr.row-sub td { background: var(--bianco); }
+  tr.row-sub td.col-title { padding-left: 22px; }
+  tr.row-sub td.col-a { padding: 0; }
+
+  /* Striscia accento */
+  .stripe-D { background: var(--blu-mid) !important; }
+  .stripe-Q { background: var(--verde) !important; }
+  .stripe-T { background: var(--terra) !important; }
+
+  /* Num badge sub-criterio */
+  .num-badge { display: inline-block; border-radius: 3px; padding: 2px 7px; font-weight: 700; font-size: 12px; }
+  .num-D { background: var(--blu-bg); color: var(--blu-mid); }
+  .num-Q { background: var(--verde-bg); color: var(--verde); }
+  .num-T { background: var(--terra-bg); color: var(--terra); }
+
+  /* Score badge */
+  .score-badge { display: inline-flex; flex-direction: column; align-items: center; border-radius: 5px; padding: 6px 10px; min-width: 64px; }
+  .score-D { background: var(--blu-bg); }
+  .score-Q { background: var(--verde-bg); }
+  .score-T { background: var(--terra-bg); }
+  .score-badge .s-val { font-size: 18px; font-weight: 700; line-height: 1; }
+  .score-D .s-val { color: var(--blu-mid); }
+  .score-Q .s-val { color: var(--verde); }
+  .score-T .s-val { color: var(--terra); }
+  .score-badge .s-pill { font-size: 9.5px; font-weight: 700; border-radius: 10px; padding: 1px 6px; margin-top: 4px; color: white; letter-spacing: .06em; }
+  .score-D .s-pill { background: var(--blu-mid); }
+  .score-Q .s-pill { background: var(--verde); }
+  .score-T .s-pill { background: var(--terra); }
+  td.col-score { text-align: center; }
+
+  /* Tag doc */
+  .tag { display: inline-block; font-size: 10.5px; font-weight: 700; padding: 2px 7px; border-radius: 3px; vertical-align: middle; margin: 1px 2px 1px 0; white-space: nowrap; }
+  .tag-rt   { background: #eaf4ea; border: 1px solid #a0c8a0; color: #145a32; }
+  .tag-sis  { background: #e8f4fd; border: 1px solid #a8d4f0; color: #005599; }
+  .tag-bus  { background: #fdf0e8; border: 1px solid #e8b080; color: #7d3800; }
+  .tag-obl  { background: #fce4e4; border: 1px solid #e74c3c; color: #922b21; }
+  .tag-pag  { background: #f0e8fd; border: 1px solid #c0a0e0; color: #4a1a7d; }
+  .tag-warn { background: #fff3cd; border: 1px solid #ffc107; color: #7d5a00; }
+
+  .doc-sep { border-top: 1px dashed var(--bordo); margin: 7px 0; }
+  .doc-spec { font-size: 11.5px; color: #555; line-height: 1.6; }
+  .doc-note { font-size: 11px; color: #888; margin-top: 4px; font-style: italic; }
+
+  /* Colonne larghezze */
+  .col-a { width: 8px; min-width: 8px; max-width: 8px; }
+  .col-b { width: 75px; }
+  .col-c { width: 195px; }
+  .col-d { min-width: 220px; }
+  .col-e { width: 100px; }
+  .col-f { width: 265px; }
+
+  /* ─── FOOTER ─── */
+  footer { background: var(--bianco); border-top: 1px solid var(--bordo); padding: 16px 40px; font-size: 11.5px; color: #666; max-width: 1200px; margin: 0 auto; }
+  footer strong { color: #333; }
+
+  @media (max-width: 900px) {
+    header, .wrapper, footer { padding-left: 16px; padding-right: 16px; }
+    .red-grid { grid-template-columns: 1fr 1fr; }
   }
-
-  /* RIGA SUBCRITERIO */
-  tr.row-sub td.col-accent { }
-  tr.row-sub td.col-num {
-    /* sfondo colorato per il numero del sub */
-  }
-  tr.row-sub td.col-titolo { padding-left: 20px; font-weight: 400; }
-
-  /* ACCENTO COLORATO */
-  .accent-d { background-color: var(--blu-mid) !important; }
-  .accent-t { background-color: var(--marrone) !important; }
-
-  /* NUMERO SUB BADGE */
-  .num-sub-d {
-    display: inline-block;
-    background: var(--blu-light);
-    color: var(--blu-mid);
-    border-radius: 3px;
-    padding: 2px 7px;
-    font-weight: 700;
-    font-size: 12px;
-  }
-  .num-sub-t {
-    display: inline-block;
-    background: var(--marrone-light);
-    color: var(--marrone);
-    border-radius: 3px;
-    padding: 2px 7px;
-    font-weight: 700;
-    font-size: 12px;
-  }
-
-  /* CRITERI PRINCIPALI (no sub) - numero colorato */
-  .num-main-d { font-size: 14px; font-weight: 800; color: var(--blu-mid); }
-  .num-main-t { font-size: 14px; font-weight: 800; color: var(--marrone); }
-
-  /* BADGE PUNTEGGIO */
-  .badge-pt {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 5px;
-    padding: 4px 8px;
-    min-width: 56px;
-    gap: 2px;
-  }
-  .badge-pt-d { background: var(--blu-light); }
-  .badge-pt-t { background: var(--marrone-light); }
-  .badge-pt .pt-val { font-size: 16px; font-weight: 800; line-height: 1.1; }
-  .badge-pt-d .pt-val { color: var(--blu-mid); }
-  .badge-pt-t .pt-val { color: var(--marrone); }
-  .badge-pt .pt-tipo {
-    font-size: 10px;
-    font-weight: 700;
-    padding: 1px 6px;
-    border-radius: 3px;
-    letter-spacing: 0.05em;
-  }
-  .badge-pt-d .pt-tipo { background: var(--blu-mid); color: #fff; }
-  .badge-pt-t .pt-tipo { background: var(--marrone); color: #fff; }
-
-  /* TAG DOCUMENTAZIONE */
-  .tag {
-    display: inline-block;
-    font-size: 10.5px;
-    font-weight: 700;
-    padding: 1px 6px;
-    border-radius: 3px;
-    vertical-align: middle;
-    margin-right: 3px;
-    white-space: nowrap;
-  }
-  .tag-rt { background: #eaf4ea; border: 1px solid #a0c8a0; color: #145a32; }
-  .tag-sis { background: #e8f4fd; border: 1px solid #a8d4f0; color: #005599; }
-  .tag-busta { background: #fdf0e8; border: 1px solid #e8b080; color: #7d3800; }
-  .tag-comprova { background: #fce4e4; border: 1px solid #e74c3c; color: #922b21; }
-  .tag-escl { background: #fffbf0; border: 1px solid #f0c060; color: #7d5a00; }
-
-  .doc-sep { border: none; border-top: 1px dashed #c0c8d8; margin: 6px 0; }
-  .doc-spec { font-size: 11.5px; color: #555; line-height: 1.5; }
-  .doc-spec strong { color: #333; }
-
-  .scala { font-size: 11.5px; color: #3a3a3a; line-height: 1.6; }
-  .scala ul { padding-left: 16px; margin-top: 3px; }
-  .scala li { margin-bottom: 2px; }
-
-  /* FOOTER */
-  .page-footer {
-    background: #f0f3f8;
-    border: 1px solid var(--grigio-bordo);
-    border-top: none;
-    padding: 14px 20px;
-    font-size: 11.5px;
-    color: #555;
-    line-height: 1.7;
-    border-radius: 0 0 6px 6px;
-  }
-  .page-footer strong { color: #333; }
-  .page-footer h3 { font-size: 12px; font-weight: 700; color: var(--blu); margin-bottom: 6px; }
 </style>
 </head>
 <body>
-<div class="page-wrap">
 
-  <!-- HEADER -->
-  <div class="page-header">
-    <h1>Tabella Offerta Tecnica – Accordo Quadro Manutenzione AREA Sant'Elia</h1>
-    <div class="meta">
-      Stazione appaltante: <strong>CRC – Centrale Regionale di Committenza della Regione Autonoma della Sardegna, per conto di AREA Sardegna</strong><br>
-      Oggetto: Lavori di manutenzione ordinaria e straordinaria su immobili in uso/proprietà di AREA – Comune di Cagliari, quartiere di Sant'Elia – Triennio 2026-2028 – 6 lotti prestazionali<br>
-      Scadenza offerte: <strong>Lunedì 27 aprile 2026 ore 13:00</strong> &nbsp;|&nbsp; Piattaforma: SardegnaCAT &nbsp;|&nbsp; CPV: 45450000-6
-    </div>
+<header>
+  <h1>Tabella Offerta Tecnica – Interventi di messa in sicurezza per adeguamento sismico IS "D'Adda" di Varallo (VC)</h1>
+  <div class="meta">Provincia di Vercelli &nbsp;·&nbsp; C.I.G. BAFC40ECE6 &nbsp;·&nbsp; C.U.P. D41B22000650001 &nbsp;·&nbsp; Scadenza offerte: Lunedì 27 aprile 2026 ore 12:00</div>
+</header>
+
+<div class="wrapper">
+
+  <!-- STRINGA DI RIEPILOGO -->
+  <div class="stringa-box">
+    <h2>Stringa di riepilogo gara</h2>
+    <p>
+      <strong>Lunedì 27 aprile 2026 ore 12:00</strong> - gara telematica - stazione appaltante <strong>Provincia di Vercelli</strong> per
+      <strong>interventi di messa in sicurezza per adeguamento sismico dell'Istituto Superiore "D'Adda" di Varallo (VC), Via Mario Tancredi Rossi, 4</strong>
+      - CUP <strong>D41B22000650001</strong> - CIG <strong>BAFC40ECE6</strong>
+      - categorie <strong>OG1/IV</strong> (prevalente), <strong>OS 18-A/III</strong> (scorporabile e integralmente subappaltabile)
+      - importo a base di gara euro <strong>1.930.000,00</strong>
+      - durata dei lavori <strong>852</strong> giorni
+      - termine per le richieste di chiarimento <strong>19 aprile 2026</strong>
+      - offerta tecnica (<strong>80</strong> punti) + prezzo (<strong>20</strong> punti con metodo bilineare).
+    </p>
   </div>
 
   <!-- SCHEDA SPECIFICHE REDAZIONALI -->
-  <div class="scheda-box">
-    <h2>📋 Scheda specifiche redazionali – Relazione metodologica (Criterio 1)</h2>
-    <div class="scheda-grid">
-      <div class="scheda-item"><div class="label">Documento</div><div class="value">Relazione metodologica</div></div>
-      <div class="scheda-item"><div class="label">Formato pagina</div><div class="value">ISO A4, orientamento verticale</div></div>
-      <div class="scheda-item"><div class="label">Numero massimo facciate</div><div class="value">12 (una facciata = una pagina)</div></div>
-      <div class="scheda-item"><div class="label">Righe per pagina</div><div class="value">Massimo 53 righe per pagina</div></div>
-      <div class="scheda-item"><div class="label">Carattere</div><div class="value">Arial, corpo 11</div></div>
-      <div class="scheda-item"><div class="label">Schema obbligatorio</div><div class="value">Un paragrafo per ogni sub-criterio – a pena di punteggio 0 sul sub-criterio assente</div></div>
-      <div class="scheda-item"><div class="label">Non computati nel limite</div><div class="value">Copertine, sommari, elenchi, documenti a comprova</div></div>
-      <div class="scheda-item"><div class="label">Allegati integrativi</div><div class="value">Max 2 elaborati in formato ISO A3 (workflow, grafici, disegni, foto)</div></div>
-      <div class="scheda-item"><div class="label">CV Tecnico PM</div><div class="value">Allegare privo di dati sensibili (residenza ecc.) – non oscurato</div></div>
-      <div class="scheda-item"><div class="label">Sottoscrizione</div><div class="value">Firma digitale come da par. 13</div></div>
-      <div class="scheda-item"><div class="label">Obbligatorietà</div><div class="value" style="color:#922b21; font-weight:700;">Obbligatoria a pena di esclusione dalla procedura</div></div>
-      <div class="scheda-item"><div class="label">Lingua</div><div class="value">Italiano</div></div>
-    </div>
-    <div class="scheda-note">
-      ⚠ La relazione deve sviluppare l'<strong>Esempio di simulazione</strong> (3 cantieri/OdL in contemporanea – par. 17.2) con un paragrafo per ciascuno dei sub-criteri 1.1, 1.2 e 1.3. L'incompletezza nello sviluppo dell'esempio comporta valutazione discrezionale ridotta da parte della Commissione. L'offerta tecnica deve essere unica per tutti i lotti, mentre la relazione metodologica va predisposta per ogni lotto (una per lotto).
+  <div class="card">
+    <div class="card-header"><span class="num">§</span> Scheda specifiche redazionali – Offerta tecnica (Busta B)</div>
+    <div class="card-body">
+      <div class="red-grid">
+        <div class="red-item"><label>Formato pagina</label><span>A4 (oppure 10 fogli formato A3)</span></div>
+        <div class="red-item"><label>Numero massimo facciate</label><span>20 pagine numerate progressivamente da 1 a 20 (escluse copertina iniziale e finale)</span></div>
+        <div class="red-item"><label>Carattere e dimensione</label><span>Arial, dimensione 12</span></div>
+        <div class="red-item"><label>Struttura obbligatoria</label><span>Per capitoli riconducibili ai criteri e sub-criteri dell'art. 17 del Disciplinare</span></div>
+        <div class="red-item"><label>Firma</label><span>Firma digitale del titolare / legale rappresentante o procuratore</span></div>
+        <div class="red-item"><label>Separazione economica</label><span>Priva di qualsiasi indicazione economica (diretta o indiretta), a pena di esclusione</span></div>
+        <div class="red-item"><label>Certificazioni</label><span>Dichiarazioni e copie delle certificazioni inserite nella Busta B negli spazi dedicati sulla PAD (non contano nel limite facciate della relazione)</span></div>
+        <div class="red-item"><label>Allegati tecnici</label><span>Schede tecniche, tabelle, flussogrammi, foto ecc. non concorrono al limite max di pagine ma non sono oggetto di valutazione né di punteggio</span></div>
+        <div class="red-item"><label>Valore contrattuale</label><span>L'offerta tecnica costituisce obbligo contrattuale; il mancato adempimento comporta l'incameramento della garanzia definitiva</span></div>
+        <div class="nota-red">
+          <strong>Nota:</strong> Il limite di 20 facciate (o 10 fogli A3) è condiviso tra tutti i criteri narrativi (1.1, 1.2, 2, 3.1, 3.2, 4.1, 4.2). Non si indica un limite per singolo criterio. L'omissione di un documento costituente l'offerta tecnica comporta la non attribuzione del punteggio al relativo elemento.
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- RIEPILOGO PUNTEGGI -->
   <div class="riepilogo">
-    <span><span class="label">Riepilogo offerta tecnica:</span></span>
-    <span class="badge-riepilogo">
-      <span class="tipo tipo-d">D</span> <strong>35 pt</strong>
-    </span>
-    <span class="sep">+</span>
-    <span class="badge-riepilogo">
-      <span class="tipo tipo-t">T</span> <strong>45 pt</strong>
-    </span>
-    <span class="sep">=</span>
-    <span class="totale-badge">80 pt TOTALE OFFERTA TECNICA</span>
-    <span style="margin-left:auto; font-size:11px; color:#a8c8e8;">Soglia sbarramento: 20 pt sul Criterio 1</span>
+    <div class="badge-r" style="background:var(--blu-bg); border:1px solid var(--blu-mid);">
+      <span class="s-val" style="font-size:22px; color:var(--blu-mid); font-weight:700;">77</span>
+      <span class="lbl" style="color:var(--blu-mid); font-size:10px;">pt D</span>
+    </div>
+    <span class="op">+</span>
+    <div class="badge-r" style="background:var(--verde-bg); border:1px solid var(--verde);">
+      <span class="s-val" style="font-size:22px; color:var(--verde); font-weight:700;">0</span>
+      <span class="lbl" style="color:var(--verde); font-size:10px;">pt Q</span>
+    </div>
+    <span class="op">+</span>
+    <div class="badge-r" style="background:var(--terra-bg); border:1px solid var(--terra);">
+      <span class="s-val" style="font-size:22px; color:var(--terra); font-weight:700;">3</span>
+      <span class="lbl" style="color:var(--terra); font-size:10px;">pt T</span>
+    </div>
+    <span class="op">=</span>
+    <div class="totale">
+      <span class="val">80</span>
+      <span class="lbl">pt TOTALE OFFERTA TECNICA</span>
+    </div>
+    <span style="font-size:12px; color:#888; margin-left:8px;">Nessun criterio Q. Nessuna riparametrazione prevista.</span>
   </div>
 
   <!-- TABELLA -->
@@ -326,384 +233,274 @@
   <table>
     <thead>
       <tr>
-        <th style="width:7px; padding:0;"></th>
-        <th style="width:52px; text-align:center;">Num.</th>
-        <th style="width:190px;">Titolo criterio</th>
-        <th>Contenuto / Subcriterio</th>
-        <th style="width:88px; text-align:center;">Punteggio</th>
-        <th style="width:270px;">Documentazione</th>
+        <th class="col-a"></th>
+        <th class="col-b">Num.</th>
+        <th class="col-c">Titolo criterio</th>
+        <th class="col-d">Contenuto / Subcriterio</th>
+        <th class="col-e">Punteggio</th>
+        <th class="col-f">Documentazione</th>
       </tr>
     </thead>
     <tbody>
 
-      <!-- ===== SEZIONE A ===== -->
-      <tr class="row-sez">
-        <td class="col-accent"></td>
-        <td colspan="5" style="padding:7px 14px;">A — Organizzazione, metodologia e gestione dei cantieri</td>
-      </tr>
-
-      <!-- PARENT 1 -->
+      <!-- ══════════ CRITERIO 1 PARENT ══════════ -->
       <tr class="row-parent">
-        <td class="col-accent accent-d"></td>
-        <td class="col-num"><span class="parent-num">1</span></td>
-        <td class="col-titolo" colspan="2">Organizzazione, elementi metodologici e gestione dei cantieri <span class="parent-tot">tot. 35 pt</span></td>
-        <td class="col-punteggio"></td>
-        <td class="col-doc"></td>
+        <td class="col-a"></td>
+        <td class="col-b col-num"><strong>1</strong></td>
+        <td class="col-c col-title">Organizzazione del personale e caratteristiche delle attrezzature, strutture di cantiere e mezzi utilizzati per la commessa</td>
+        <td class="col-d"></td>
+        <td class="col-e col-score" style="font-size:12px; color:#444; font-weight:700;">tot. 15 pt D</td>
+        <td class="col-f"></td>
       </tr>
 
-      <!-- SUB 1.1 -->
-      <tr class="row-sub row-data-even">
-        <td class="col-accent accent-d"></td>
-        <td class="col-num"><span class="num-sub-d">1.1</span></td>
-        <td class="col-titolo">Analisi iniziale sviluppo dell'esempio, pianificazione e avvio attività</td>
-        <td class="col-contenuto">
-          Il paragrafo deve contenere la proposta metodologica del concorrente in merito a: (a) analisi dei progetti dei singoli interventi; (b) definizione dei piani di progetto; (c) monitoraggio e controllo dei tempi di esecuzione del complesso delle attività; (d) organizzazione della manodopera e delle risorse in genere.<br><br>
-          Sarà valutata positivamente la presenza della figura del Tecnico della gestione e coordinamento del processo edilizio (CSA art. 19), preferibilmente in possesso di certificazione PM (ISIPM Accredia o equipollenti). Il concorrente dovrà illustrare il proprio cronoprogramma per singolo OdL/cantiere, mettendolo a sistema con l'esecuzione contemporanea di altri OdL/cantieri.<br><br>
-          <span style="font-size:11.5px; color:#555;">Sviluppare sull'<strong>Esempio di simulazione</strong> (par. 17.2): 3 cantieri/OdL in contemporanea su edificio ERP con criticità specifiche.</span><br><br>
-          <strong>Scala di valutazione (D):</strong>
-          <div class="scala">Insufficiente/irrilevante: 0–0,20 &nbsp;|&nbsp; Mediocre: 0,21–0,40 &nbsp;|&nbsp; Sufficiente: 0,41–0,60 &nbsp;|&nbsp; Buono: 0,61–0,80 &nbsp;|&nbsp; Ottimo: 0,81–1,00</div>
+      <!-- 1.1 -->
+      <tr class="row-sub alt">
+        <td class="col-a stripe-D"></td>
+        <td class="col-b col-num"><span class="num-badge num-D">1.1</span></td>
+        <td class="col-c col-title">Organizzazione del personale</td>
+        <td class="col-d">
+          Organigramma funzionale della struttura fissa di cantiere (Direttore Tecnico, Capo Cantiere, ecc.) suddiviso per fasi di lavoro e tipologie di lavorazioni previste in progetto.<br><br>
+          <strong>Criteri motivazionali:</strong> verranno valutati il miglior equilibrio dell'organigramma (numero di risorse, esperienza e professionalità), la gestione e razionalizzazione del personale nelle diverse fasi lavorative, e il rispetto delle tempistiche del cronoprogramma. Richieste informazioni su inquadramento contrattuale e formazione del personale.
         </td>
-        <td class="col-punteggio">
-          <div class="badge-pt badge-pt-d"><span class="pt-val">20</span><span class="pt-tipo">D</span></div>
+        <td class="col-e col-score">
+          <span class="score-badge score-D">
+            <span class="s-val">8</span>
+            <span class="s-pill">D</span>
+          </span>
         </td>
-        <td class="col-doc">
-          <span class="tag tag-rt">RT</span> Relazione metodologica<br>
-          <span class="tag tag-busta">BUSTA D</span> Eventuali 2 elaborati integrativi ISO A3<br>
-          <span class="tag tag-busta">BUSTA D</span> CV Tecnico PM + eventuale certif. PM (ISIPM o equiv.)<br>
-          <hr class="doc-sep">
-          <div class="doc-spec"><strong>Specifiche:</strong> Max 12 facciate complessivi relazione (Arial 11, ISO A4, max 53 righe/pag.). Paragrafo dedicato al sub-criterio 1.1 obbligatorio (pena punteggio 0). Firmare digitalmente.</div>
-        </td>
-      </tr>
-
-      <!-- SUB 1.2 -->
-      <tr class="row-sub row-data-odd">
-        <td class="col-accent accent-d"></td>
-        <td class="col-num"><span class="num-sub-d">1.2</span></td>
-        <td class="col-titolo">Piano di gestione delle interferenze</td>
-        <td class="col-contenuto">
-          Proposta metodologica per la gestione delle interferenze con gli occupanti degli immobili in relazione all'Esempio di simulazione (par. 17.2), con evidenziazione del livello di specifica sensibilità e minimizzazione dei disagi. Deve coprire: (a) fruibilità degli spazi e attività quotidiane (protocollo "cantiere gentile" – CSA art. 22); (b) rumore, vibrazioni e polvere; (c) stoccaggio e smaltimento rifiuti; (d) interruzione forniture energetiche.<br><br>
-          Le proposte devono essere calate specificatamente sull'esempio di simulazione indicando le misure di prevenzione/attenuazione/rimozione, con attenzione alla contemporaneità di più OdL.<br><br>
-          <strong>Scala di valutazione (D):</strong>
-          <div class="scala">Insufficiente/irrilevante: 0–0,20 &nbsp;|&nbsp; Mediocre: 0,21–0,40 &nbsp;|&nbsp; Sufficiente: 0,41–0,60 &nbsp;|&nbsp; Buono: 0,61–0,80 &nbsp;|&nbsp; Ottimo: 0,81–1,00</div>
-        </td>
-        <td class="col-punteggio">
-          <div class="badge-pt badge-pt-d"><span class="pt-val">10</span><span class="pt-tipo">D</span></div>
-        </td>
-        <td class="col-doc">
-          <span class="tag tag-rt">RT</span> Relazione metodologica<br>
-          <hr class="doc-sep">
-          <div class="doc-spec"><strong>Specifiche:</strong> Limite facciate condiviso con sub-criteri 1.1 e 1.3 (max 12 facciate totali). Paragrafo dedicato al sub-criterio 1.2 obbligatorio.</div>
+        <td class="col-f">
+          <span class="tag tag-rt">RT</span>
+          <div class="doc-sep"></div>
+          <div class="doc-spec">Relazione tecnica: A4, Arial 12, max 20 pag. complessive (escluse copertine), numerate da 1 a 20.<br>Struttura per capitoli (art. 17). Firma digitale.</div>
+          <div style="margin-top:5px;"><span class="tag tag-pag">⚑ Limite 20 facciate condiviso</span></div>
         </td>
       </tr>
 
-      <!-- SUB 1.3 -->
-      <tr class="row-sub row-data-even">
-        <td class="col-accent accent-d"></td>
-        <td class="col-num"><span class="num-sub-d">1.3</span></td>
-        <td class="col-titolo">Azioni concrete di sensibilizzazione dell'OE verso le maestranze in materia di sicurezza nelle attività di cantiere</td>
-        <td class="col-contenuto">
-          Descrizione delle azioni concrete che saranno attivate dall'operatore economico durante le attività di esecuzione dei lavori al fine di sensibilizzare le maestranze in materia di sicurezza. Tali azioni devono essere aggiuntive rispetto a quanto già previsto dalla normativa vigente in materia.<br><br>
-          Saranno valutate la sensibilità, l'efficacia e la coerenza delle azioni descritte finalizzate al raggiungimento degli obiettivi indicati per questo sub-criterio. Le proposte devono essere calate sull'esempio di simulazione.<br><br>
-          <strong>Scala di valutazione (D):</strong>
-          <div class="scala">Insufficiente/irrilevante: 0–0,20 &nbsp;|&nbsp; Mediocre: 0,21–0,40 &nbsp;|&nbsp; Sufficiente: 0,41–0,60 &nbsp;|&nbsp; Buono: 0,61–0,80 &nbsp;|&nbsp; Ottimo: 0,81–1,00</div>
+      <!-- 1.2 -->
+      <tr class="row-sub">
+        <td class="col-a stripe-D"></td>
+        <td class="col-b col-num"><span class="num-badge num-D">1.2</span></td>
+        <td class="col-c col-title">Dotazione di attrezzature, strutture di cantiere e mezzi</td>
+        <td class="col-d">
+          Descrizione della dotazione di attrezzature, strutture di cantiere e mezzi (tipologia e quantità), con riferimento alla capacità di operare con più squadre in contemporanea e alla sostituzione in caso di guasto.<br><br>
+          <strong>Criteri motivazionali:</strong> verranno valutati tipologia, numero e classe ambientale dei mezzi; saranno particolarmente apprezzati mezzi di piena disponibilità del concorrente, a ridotte emissioni inquinanti e elevate prestazioni energetiche; positivamente valutate attrezzature dotate di sistemi per evitare diffusione di polveri, rumori o altri inquinanti.
         </td>
-        <td class="col-punteggio">
-          <div class="badge-pt badge-pt-d"><span class="pt-val">5</span><span class="pt-tipo">D</span></div>
+        <td class="col-e col-score">
+          <span class="score-badge score-D">
+            <span class="s-val">7</span>
+            <span class="s-pill">D</span>
+          </span>
         </td>
-        <td class="col-doc">
-          <span class="tag tag-rt">RT</span> Relazione metodologica<br>
-          <hr class="doc-sep">
-          <div class="doc-spec"><strong>Specifiche:</strong> Limite facciate condiviso con sub-criteri 1.1 e 1.2 (max 12 facciate totali). Paragrafo dedicato al sub-criterio 1.3 obbligatorio.</div>
-        </td>
-      </tr>
-
-      <!-- ===== SEZIONE B ===== -->
-      <tr class="row-sez">
-        <td class="col-accent"></td>
-        <td colspan="5" style="padding:7px 14px;">B — Criteri premiali: esperienza, capacità operativa e organizzativa</td>
-      </tr>
-
-      <!-- CRITERIO 2 (unico sub 2.1) -->
-      <tr class="row-data-odd">
-        <td class="col-accent accent-t"></td>
-        <td class="col-num"><span class="num-main-t">2</span></td>
-        <td class="col-titolo">Esperienza lavori di manutenzione in immobili Edilizia Residenziale Pubblica (ERP) – PREMIANTe</td>
-        <td class="col-contenuto">
-          <strong>Sub-criterio 2.1 –</strong> Dimostrazione di aver regolarmente eseguito lavori di manutenzione in immobili ERP nell'ultimo quinquennio (certificati tra marzo 2021 – marzo 2026, importo lavori pro-quota):<br>
-          <div class="scala"><ul>
-            <li>n. 1 CEL da € 500.001 a € 1.000.000 → <strong>1 punto</strong></li>
-            <li>n. 1 CEL da € 1.000.001 a € 1.500.000 → <strong>2 punti</strong></li>
-            <li>n. 1 CEL da € 1.500.001 a € 2.000.000 → <strong>3 punti</strong></li>
-            <li>n. 1 CEL da € 2.000.001 a € 2.500.000 → <strong>4 punti</strong></li>
-            <li>n. 1 CEL da € 2.500.001 a € 3.000.000 → <strong>5 punti</strong></li>
-            <li>n. 1 CEL da € 3.500.001 a € 4.000.000 → <strong>6 punti</strong></li>
-            <li>Somma più CEL (tipo a-b-c-d-e-f) ≥ € 4.000.001, o unico CEL > € 4.000.001, o somma più CEL fino al max → <strong>7 punti</strong></li>
-            <li>Nessun CEL → <strong>0 punti</strong></li>
-          </ul></div>
-          La dichiarazione è resa compilando la tabella sinottica sulla piattaforma (tabella riepilogativa).
-        </td>
-        <td class="col-punteggio">
-          <div class="badge-pt badge-pt-t"><span class="pt-val">7</span><span class="pt-tipo">T</span></div>
-        </td>
-        <td class="col-doc">
-          <span class="tag tag-sis">SIS</span> Compilare tabella sinottica a sistema (flag)<br>
-          <span class="tag tag-busta">BUSTA D</span> CEL firmati dalla Stazione appaltante (firma verificabile digitalmente o analogica con data)<br>
-          <hr class="doc-sep">
-          <div class="doc-spec"><strong>Comprova obbligatoria:</strong> <span class="tag tag-comprova">Comprova obbligatoria</span> Certificato di regolare esecuzione/collaudo per ogni intervento inserito in tabella. L'assenza di uno o più dati impedirà la valutazione dell'intervento da parte della commissione. Non è applicabile il soccorso istruttorio per l'offerta tecnica.</div>
+        <td class="col-f">
+          <span class="tag tag-rt">RT</span>
+          <div class="doc-sep"></div>
+          <div class="doc-spec">Relazione tecnica: A4, Arial 12, max 20 pag. complessive (escluse copertine), numerate da 1 a 20.<br>Struttura per capitoli (art. 17). Firma digitale.</div>
+          <div style="margin-top:5px;"><span class="tag tag-pag">⚑ Limite 20 facciate condiviso</span></div>
         </td>
       </tr>
 
-      <!-- CRITERIO 3 -->
-      <tr class="row-data-even">
-        <td class="col-accent accent-t"></td>
-        <td class="col-num"><span class="num-main-t">3</span></td>
-        <td class="col-titolo">Esecuzione contemporanea di più cantieri/OdL – PREMIANTe</td>
-        <td class="col-contenuto">
-          <strong>Sub-criterio 3.1 –</strong> Disponibilità a eseguire più OdL contemporaneamente anche in immobili diversi:<br>
-          <div class="scala"><ul>
-            <li>3 OdL → <strong>4 punti</strong></li>
-            <li>2 OdL → <strong>2 punti</strong></li>
-            <li>Nessuna disponibilità → <strong>0 punti</strong></li>
-          </ul></div>
-          L'impegno diventa vincolante contrattualmente per tutta la durata dell'AQ e dei contratti attuativi. Per ogni cantiere l'OE deve garantire le dotazioni minime di cantiere previste dal CSA, salvo l'impegno a mettere a disposizione un maggior numero di maestranze con il Criterio 4.
+      <!-- ══════════ CRITERIO 2 (standalone) ══════════ -->
+      <tr class="row-normal alt">
+        <td class="col-a stripe-D"></td>
+        <td class="col-b col-num" style="font-weight:700; font-size:13px; color:var(--blu-mid);">2</td>
+        <td class="col-c col-title">Soluzioni tecniche e tecnologiche, qualità e pregio dei materiali e dei componenti edilizi utilizzati</td>
+        <td class="col-d">
+          Descrizione dettagliata ed esaustiva delle soluzioni tecniche e metodologiche per l'esecuzione di ogni fase lavorativa prevista in progetto. Il concorrente può proporre migliorie tecnico-tecnologiche, ambientali ed energetiche (a propria cura e spese), specificando la singola miglioria e la quantità massima offerta. Le soluzioni offerte saranno eseguite fino al loro completo raggiungimento secondo le modalità definite dalla Direzione Lavori.<br><br>
+          <strong>Criteri motivazionali:</strong> proposte chiare, schematiche e tecnicamente fondate; soluzioni innovative e verificabili per incrementare durabilità, affidabilità e sicurezza. A titolo esemplificativo (non esaustivo): ripristini su pareti e solette interessate dagli interventi sismici; gestione impianti tecnologici (elettrico, idraulico, antincendio, antintrusione) interferenti; qualità e durabilità spazio tribune palestra; ripristini aula ginnica piano seminterrato; risanamento facciata interno cortile.
         </td>
-        <td class="col-punteggio">
-          <div class="badge-pt badge-pt-t"><span class="pt-val">4</span><span class="pt-tipo">T</span></div>
+        <td class="col-e col-score">
+          <span class="score-badge score-D">
+            <span class="s-val">37</span>
+            <span class="s-pill">D</span>
+          </span>
         </td>
-        <td class="col-doc">
-          <span class="tag tag-sis">SIS</span> Dichiarazione di impegno inserita direttamente a sistema nell'apposito campo dedicato<br>
-          <hr class="doc-sep">
-          <div class="doc-spec">Specifiche redazionali: non indicate nel documento. L'impegno costituisce requisito minimo inderogabile di contratto.</div>
-        </td>
-      </tr>
-
-      <!-- CRITERIO 4 -->
-      <tr class="row-data-odd">
-        <td class="col-accent accent-t"></td>
-        <td class="col-num"><span class="num-main-t">4</span></td>
-        <td class="col-titolo">Incremento della squadra tipo – PREMIANTe</td>
-        <td class="col-contenuto">
-          <strong>Sub-criterio 4.1 –</strong> Incremento del numero dei componenti della squadra-tipo corrispondente alla categoria del lotto di qualificazione, rispetto al minimo indicato nel CSA art. 19:<br>
-          <div class="scala"><ul>
-            <li>+ n. 1 unità → <strong>2 punti</strong></li>
-            <li>+ n. 2 unità → <strong>4 punti</strong></li>
-            <li>Nessuna disponibilità → <strong>0 punti</strong></li>
-          </ul></div>
-          La qualifica delle nuove unità sarà valutata secondo le esigenze espresse, all'occorrenza, dalla Stazione appaltante.
-        </td>
-        <td class="col-punteggio">
-          <div class="badge-pt badge-pt-t"><span class="pt-val">4</span><span class="pt-tipo">T</span></div>
-        </td>
-        <td class="col-doc">
-          <span class="tag tag-sis">SIS</span> Dichiarazione di impegno inserita direttamente a sistema nell'apposito campo dedicato<br>
-          <hr class="doc-sep">
-          <div class="doc-spec">Specifiche redazionali: non indicate nel documento. L'impegno costituisce requisito minimo inderogabile di contratto.</div>
+        <td class="col-f">
+          <span class="tag tag-rt">RT</span>
+          <div class="doc-sep"></div>
+          <div class="doc-spec">Relazione tecnica: A4, Arial 12, max 20 pag. complessive (escluse copertine), numerate da 1 a 20.<br>Struttura per capitoli (art. 17). Firma digitale.</div>
+          <div style="margin-top:5px;"><span class="tag tag-pag">⚑ Limite 20 facciate condiviso</span></div>
         </td>
       </tr>
 
-      <!-- CRITERIO 5 -->
-      <tr class="row-data-even">
-        <td class="col-accent accent-t"></td>
-        <td class="col-num"><span class="num-main-t">5</span></td>
-        <td class="col-titolo">Reperibilità/operatività extra-orario – PREMIANTe</td>
-        <td class="col-contenuto">
-          <strong>Sub-criterio 5.1 –</strong> Messa a disposizione di un soggetto reperibile e operativo oltre il termine dell'orario di lavoro ordinario (compreso sabato e festivi), per tutta la durata del contratto attuativo:<br>
-          <div class="scala"><ul>
-            <li>Sì → <strong>3 punti</strong></li>
-            <li>No, nessun impegno → <strong>0 punti</strong></li>
-          </ul></div>
-          Il calendario dei turni di reperibilità dovrà essere presentato in sede di consegna dei lavori. Il soggetto reperibile/operativo avrà il compito di ricevere le segnalazioni e intervenire sul posto ai fini della sicurezza e del ripristino dell'alloggio.
-        </td>
-        <td class="col-punteggio">
-          <div class="badge-pt badge-pt-t"><span class="pt-val">3</span><span class="pt-tipo">T</span></div>
-        </td>
-        <td class="col-doc">
-          <span class="tag tag-sis">SIS</span> Dichiarazione di impegno a sistema<br>
-          <span class="tag tag-busta">BUSTA D</span> Calendario turni reperibilità (da produrre in sede di consegna dei lavori)<br>
-          <hr class="doc-sep">
-          <div class="doc-spec">Specifiche redazionali: non indicate nel documento per la dichiarazione a sistema.</div>
-        </td>
-      </tr>
-
-      <!-- CRITERIO 6 -->
-      <tr class="row-data-odd">
-        <td class="col-accent accent-t"></td>
-        <td class="col-num"><span class="num-main-t">6</span></td>
-        <td class="col-titolo">Mediatore di cantiere – PREMIANTe</td>
-        <td class="col-contenuto">
-          <strong>Sub-criterio 6.1 –</strong> Messa a disposizione di un soggetto con la funzione di "mediatore di cantiere":<br>
-          <div class="scala"><ul>
-            <li>Sì → <strong>4 punti</strong></li>
-            <li>Nessuna disponibilità → <strong>0 punti</strong></li>
-          </ul></div>
-          Il soggetto sarà di riferimento sia per i residenti che per la stazione appaltante. Dovrà essere presentato ai residenti come punto di riferimento per il cantiere per spiegare i tempi del lavoro, raccogliere eventuali criticità preesistenti o causate dall'avvio dei lavori e armonizzare la convivenza durante i lavori. I compiti minimi della figura sono definiti nel CSA art. 23.
-        </td>
-        <td class="col-punteggio">
-          <div class="badge-pt badge-pt-t"><span class="pt-val">4</span><span class="pt-tipo">T</span></div>
-        </td>
-        <td class="col-doc">
-          <span class="tag tag-sis">SIS</span> Dichiarazione di impegno inserita a sistema nell'apposito campo dedicato<br>
-          <hr class="doc-sep">
-          <div class="doc-spec">Specifiche redazionali: non indicate nel documento. Se il concorrente si impegna nel Criterio 6, la relazione metodologica (sub-criterio 1.2) dovrà descrivere anche l'attività del Mediatore di cantiere.</div>
-        </td>
-      </tr>
-
-      <!-- ===== SEZIONE C ===== -->
-      <tr class="row-sez">
-        <td class="col-accent"></td>
-        <td colspan="5" style="padding:7px 14px;">C — Criteri premiali: sicurezza, ambiente e sostenibilità</td>
-      </tr>
-
-      <!-- CRITERIO 7 -->
-      <tr class="row-data-even">
-        <td class="col-accent accent-t"></td>
-        <td class="col-num"><span class="num-main-t">7</span></td>
-        <td class="col-titolo">Riduzione premi INAIL OT23 2025 (rif. anno 2024) – PREMIANTe</td>
-        <td class="col-contenuto">
-          <strong>Sub-criterio 7.1 –</strong> Riduzione del tasso medio di tariffa per prevenzione dell'INAIL per le aziende che realizzano interventi di miglioramento delle condizioni di salute e sicurezza nei luoghi di lavoro, in aggiunta a quelli obbligatori per legge:<br>
-          <div class="scala"><ul>
-            <li>Accoglimento con riduzione della percentuale di premio (modello OT23 2025, anno di rif. 2024) → <strong>2 punti</strong></li>
-            <li>Rigetto o mancata presentazione istanza → <strong>0 punti</strong></li>
-          </ul></div>
-          Il beneficiario del provvedimento di accoglimento dovrà essere: il concorrente, oppure il consorzio (in caso di esecuzione in proprio), l'impresa consorziata esecutrice (in caso di indicazione), oppure uno dei soggetti riuniti in raggruppamento.
-        </td>
-        <td class="col-punteggio">
-          <div class="badge-pt badge-pt-t"><span class="pt-val">2</span><span class="pt-tipo">T</span></div>
-        </td>
-        <td class="col-doc">
-          <span class="tag tag-busta">BUSTA D</span> Copia del provvedimento di accoglimento comunicato tramite PEC, da cui si evinca l'anno di riferimento e la riduzione percentuale ricevuta (formato PDF)<br>
-          <hr class="doc-sep">
-          <div class="doc-spec"><strong>Comprova obbligatoria:</strong> <span class="tag tag-comprova">Comprova obbligatoria</span> Senza documento il punteggio non è attribuito.</div>
-        </td>
-      </tr>
-
-      <!-- CRITERIO 8 -->
-      <tr class="row-data-odd">
-        <td class="col-accent accent-t"></td>
-        <td class="col-num"><span class="num-main-t">8</span></td>
-        <td class="col-titolo">Sistemi di gestione ambientale delle imprese (C.A.M) – PREMIANTe</td>
-        <td class="col-contenuto">
-          <strong>Sub-criterio 8.1 –</strong> Dimostrazione della propria capacità di gestire gli aspetti ambientali dell'intero processo (DM 24/11/2025, criterio 3.2.1) – almeno per la sola sede operativa:<br>
-          <div class="scala"><ul>
-            <li>Possesso certificazione UNI EN ISO 14001 → <strong>2 punti</strong></li>
-            <li>Possesso registrazione EMAS (regolamento CE n. 1221/2009) → <strong>3 punti</strong></li>
-            <li>Possesso di entrambe (ISO 14001 + EMAS) → <strong>5 punti</strong></li>
-            <li>Nessuna certificazione → <strong>0 punti</strong></li>
-          </ul></div>
-          La certificazione dovrà essere mantenuta per tutta la durata dell'AQ e dei contratti attuativi. Possibile ricorrere all'avvalimento premiale (par. 8). Codici NACE di riferimento: 41, 42, 43.
-        </td>
-        <td class="col-punteggio">
-          <div class="badge-pt badge-pt-t"><span class="pt-val">5</span><span class="pt-tipo">T</span></div>
-        </td>
-        <td class="col-doc">
-          <span class="tag tag-busta">BUSTA D</span> Copia delle certificazioni ISO 14001 e/o EMAS in corso di validità (allegare nell'apposito spazio dedicato)<br>
-          <hr class="doc-sep">
-          <div class="doc-spec"><strong>Comprova obbligatoria:</strong> <span class="tag tag-comprova">Comprova obbligatoria</span> Mancanza del certificato = punteggio non attribuito. In caso di avvalimento premiale, allegare obbligatoriamente il relativo contratto nella busta di qualifica.</div>
-        </td>
-      </tr>
-
-      <!-- PARENT 9 -->
+      <!-- ══════════ CRITERIO 3 PARENT ══════════ -->
       <tr class="row-parent">
-        <td class="col-accent accent-t"></td>
-        <td class="col-num"><span class="parent-num">9</span></td>
-        <td class="col-titolo" colspan="2">Certificazioni ISO o equipollenti – PREMIANTe <span class="parent-tot">tot. 4 pt</span></td>
-        <td class="col-punteggio"></td>
-        <td class="col-doc"></td>
+        <td class="col-a"></td>
+        <td class="col-b col-num"><strong>3</strong></td>
+        <td class="col-c col-title">Sicurezza, organizzazione del cantiere e attività didattica</td>
+        <td class="col-d"></td>
+        <td class="col-e col-score" style="font-size:12px; color:#444; font-weight:700;">tot. 15 pt D</td>
+        <td class="col-f"></td>
       </tr>
 
-      <!-- SUB 9.2 -->
-      <tr class="row-sub row-data-even">
-        <td class="col-accent accent-t"></td>
-        <td class="col-num"><span class="num-sub-t">9.2</span></td>
-        <td class="col-titolo">Possesso ISO 45001 o equipollente</td>
-        <td class="col-contenuto">
-          Possesso della certificazione ISO 45001 (Sistema di gestione per la salute e la sicurezza sul lavoro) o equipollente, in corso di validità.<br>
-          Il punteggio è <strong>on/off</strong>: o si possiede la certificazione valida o no.
+      <!-- 3.1 -->
+      <tr class="row-sub alt">
+        <td class="col-a stripe-D"></td>
+        <td class="col-b col-num"><span class="num-badge num-D">3.1</span></td>
+        <td class="col-c col-title">Sicurezza, organizzazione del cantiere e interferenze con l'attività didattica</td>
+        <td class="col-d">
+          Miglior organizzazione di cantiere, ai sensi del D.Lgs. 81/2008, utile a ridurre l'impatto sull'attività didattica e ottimizzare i tempi per le varie fasi lavorative. Il concorrente presenta valutazioni tecniche relazionate ai tipi di intervento previsti e alle tempistiche del Capitolato Speciale d'Appalto.<br><br>
+          <strong>Criteri motivazionali:</strong> verranno valutate tutte le azioni per la cantierizzazione sicura, la riduzione delle interferenze con la didattica e l'ottimizzazione dei tempi; particolarmente apprezzate le soluzioni per la maggiore riduzione possibile delle interferenze con studenti e personale didattico.
         </td>
-        <td class="col-punteggio">
-          <div class="badge-pt badge-pt-t"><span class="pt-val">2</span><span class="pt-tipo">T</span></div>
+        <td class="col-e col-score">
+          <span class="score-badge score-D">
+            <span class="s-val">12</span>
+            <span class="s-pill">D</span>
+          </span>
         </td>
-        <td class="col-doc">
-          <span class="tag tag-busta">BUSTA D</span> Copia certificazione ISO 45001 o equipollente in corso di validità<br>
-          <hr class="doc-sep">
-          <div class="doc-spec"><span class="tag tag-comprova">Comprova obbligatoria</span> Mancanza = punteggio 0. Possibile avvalimento premiale (par. 8) allegando il relativo contratto nella busta di qualifica.</div>
-        </td>
-      </tr>
-
-      <!-- SUB 9.3 -->
-      <tr class="row-sub row-data-odd">
-        <td class="col-accent accent-t"></td>
-        <td class="col-num"><span class="num-sub-t">9.3</span></td>
-        <td class="col-titolo">Possesso SA 8000 o equipollente</td>
-        <td class="col-contenuto">
-          Possesso della certificazione SA 8000 (Social Accountability – responsabilità sociale delle imprese) o equipollente, in corso di validità.<br>
-          Il punteggio è <strong>on/off</strong>: o si possiede la certificazione valida o no.
-        </td>
-        <td class="col-punteggio">
-          <div class="badge-pt badge-pt-t"><span class="pt-val">2</span><span class="pt-tipo">T</span></div>
-        </td>
-        <td class="col-doc">
-          <span class="tag tag-busta">BUSTA D</span> Copia certificazione SA 8000 o equipollente in corso di validità<br>
-          <hr class="doc-sep">
-          <div class="doc-spec"><span class="tag tag-comprova">Comprova obbligatoria</span> Mancanza = punteggio 0. Possibile avvalimento premiale (par. 8) allegando il relativo contratto nella busta di qualifica.</div>
+        <td class="col-f">
+          <span class="tag tag-rt">RT</span>
+          <div class="doc-sep"></div>
+          <div class="doc-spec">Relazione tecnica: A4, Arial 12, max 20 pag. complessive (escluse copertine), numerate da 1 a 20.<br>Struttura per capitoli (art. 17). Firma digitale.</div>
+          <div style="margin-top:5px;"><span class="tag tag-pag">⚑ Limite 20 facciate condiviso</span></div>
         </td>
       </tr>
 
-      <!-- ===== SEZIONE D ===== -->
-      <tr class="row-sez">
-        <td class="col-accent"></td>
-        <td colspan="5" style="padding:7px 14px;">D — Criteri premiali: logistica e accordi operativi</td>
-      </tr>
-
-      <!-- CRITERIO 10 -->
-      <tr class="row-data-even">
-        <td class="col-accent accent-t"></td>
-        <td class="col-num"><span class="num-main-t">10</span></td>
-        <td class="col-titolo">Disponibilità sede operativa attrezzata / magazzino attrezzato di prossimità – PREMIANTe</td>
-        <td class="col-contenuto">
-          <strong>Sub-criterio 10.1 –</strong> Disponibilità immediata di una sede operativa attrezzata/magazzino attrezzato per il pronto intervento; punteggio in base alla distanza dal quartiere di Sant'Elia a Cagliari (coordinate di riferimento: Piazza Lao Silesu 39.195630, 9.135031):<br>
-          <div class="scala"><ul>
-            <li>Distanza entro 40,00 Km → <strong>6 punti</strong></li>
-            <li>Distanza tra 40,01 e 80,00 Km → <strong>4 punti</strong></li>
-            <li>Distanza tra 80,01 e 130,00 Km → <strong>2 punti</strong></li>
-            <li>Distanza oltre 130 Km, ma entro territorio regionale → <strong>1 punto</strong></li>
-            <li>Nessun magazzino → <strong>0 punti</strong></li>
-          </ul></div>
-          La distanza è calcolata con Google Maps (percorso più breve in km). "Sede operativa" = risultante nel Registro delle imprese. "Magazzino attrezzato" = immobile in Categoria Catastale C/2, disponibile con titolo giuridico stabile (proprietà o locazione registrata) alla data di presentazione dell'offerta. Sono esclusi: comodato d'uso, avvalimento premiale, contratti preliminari.
+      <!-- 3.2 -->
+      <tr class="row-sub">
+        <td class="col-a stripe-D"></td>
+        <td class="col-b col-num"><span class="num-badge num-D">3.2</span></td>
+        <td class="col-c col-title">Interferenze con l'attività didattica: comunicazioni e gestione criticità</td>
+        <td class="col-d">
+          Proposte di metodologie e strumenti per relazionarsi con l'Amministrazione e il personale scolastico durante le lavorazioni, con particolare attenzione alle fasi svolte in presenza di attività didattica.<br><br>
+          <strong>Criteri motivazionali:</strong> proposte coerenti, attuabili e calate nella commessa; apprezzate le proposte che prevedono sensibilità verso le esigenze della scuola e che descrivono modalità di gestione di eventuali criticità legate ai lavori o all'organizzazione dell'attività didattica.
         </td>
-        <td class="col-punteggio">
-          <div class="badge-pt badge-pt-t"><span class="pt-val">6</span><span class="pt-tipo">T</span></div>
+        <td class="col-e col-score">
+          <span class="score-badge score-D">
+            <span class="s-val">3</span>
+            <span class="s-pill">D</span>
+          </span>
         </td>
-        <td class="col-doc">
-          <span class="tag tag-busta">BUSTA D</span> Per sede operativa: Visura catastale aggiornata<br>
-          <span class="tag tag-busta">BUSTA D</span> Per magazzino: Ricevuta di registrazione Agenzia delle Entrate (data antecedente la presentazione offerta) + copia contratto locazione<br>
-          <hr class="doc-sep">
-          <div class="doc-spec"><span class="tag tag-comprova">Comprova obbligatoria</span> Indicare in sede di offerta tecnica l'indirizzo e il nome dell'impresa a cui fa capo. La disponibilità dovrà permanere per tutta la durata dell'AQ e dei contratti attuativi. La verifica avverrà tramite Registro delle imprese.</div>
+        <td class="col-f">
+          <span class="tag tag-rt">RT</span>
+          <div class="doc-sep"></div>
+          <div class="doc-spec">Relazione tecnica: A4, Arial 12, max 20 pag. complessive (escluse copertine), numerate da 1 a 20.<br>Struttura per capitoli (art. 17). Firma digitale.</div>
+          <div style="margin-top:5px;"><span class="tag tag-pag">⚑ Limite 20 facciate condiviso</span></div>
         </td>
       </tr>
 
-      <!-- CRITERIO 11 -->
-      <tr class="row-data-odd">
-        <td class="col-accent accent-t"></td>
-        <td class="col-num"><span class="num-main-t">11</span></td>
-        <td class="col-titolo">Accordo con fornitore di infissi – PREMIANTe</td>
-        <td class="col-contenuto">
-          <strong>Sub-criterio 11.1 –</strong> Accordo vincolante con un fornitore qualificato per la fornitura e posa in opera di infissi in alluminio, punteggio graduato in base ai tempi per la consegna/installazione dal giorno dell'ordinativo:<br>
-          <div class="scala"><ul>
-            <li>Entro i 60 gg → <strong>6 punti</strong></li>
-            <li>Da 61 a 70 gg → <strong>5 punti</strong></li>
-            <li>Da 71 a 80 gg → <strong>3 punti</strong></li>
-            <li>Oltre 80 gg → <strong>0 punti</strong></li>
-          </ul></div>
-          Il concorrente potrà organizzarsi autonomamente nel monitoraggio dell'ordine e, in caso di ritardo nella consegna della commessa, nella sostituzione totale o parziale del fornitore indicato in sede di gara, al fine di rispettare la tempistica offerta. È prevista una penale per ogni giorno di ritardo rispetto alla tempistica offerta (CSA art. 13).
+      <!-- ══════════ CRITERIO 4 PARENT ══════════ -->
+      <tr class="row-parent">
+        <td class="col-a"></td>
+        <td class="col-b col-num"><strong>4</strong></td>
+        <td class="col-c col-title">Recupero e gestione rifiuti, pulizia e ordine del cantiere</td>
+        <td class="col-d"></td>
+        <td class="col-e col-score" style="font-size:12px; color:#444; font-weight:700;">tot. 10 pt D</td>
+        <td class="col-f"></td>
+      </tr>
+
+      <!-- 4.1 -->
+      <tr class="row-sub alt">
+        <td class="col-a stripe-D"></td>
+        <td class="col-b col-num"><span class="num-badge num-D">4.1</span></td>
+        <td class="col-c col-title">Recupero e gestione rifiuti</td>
+        <td class="col-d">
+          Metodologie operative per raccolta e conferimento in discarica autorizzata di prodotti di qualsiasi natura, macerie e detriti, nel rispetto delle normative vigenti sui rifiuti, nonché recupero dei materiali riutilizzabili.<br><br>
+          <strong>Criteri motivazionali:</strong> valutate positivamente le proposte che prevedono, nel rispetto della normativa, il recupero e il riutilizzo di parte del materiale di rifiuto (anche eventualmente in altri cantieri).
         </td>
-        <td class="col-punteggio">
-          <div class="badge-pt badge-pt-t"><span class="pt-val">6</span><span class="pt-tipo">T</span></div>
+        <td class="col-e col-score">
+          <span class="score-badge score-D">
+            <span class="s-val">4</span>
+            <span class="s-pill">D</span>
+          </span>
         </td>
-        <td class="col-doc">
-          <span class="tag tag-busta">BUSTA D</span> Copia dell'accordo vincolante sottoscritto digitalmente dalle parti, in cui si riporti chiaramente la tempistica di consegna/installazione offerta<br>
-          <hr class="doc-sep">
-          <div class="doc-spec"><span class="tag tag-comprova">Comprova obbligatoria</span> Senza accordo allegato il punteggio non è attribuito. Non è ammesso l'avvalimento premiale per questo criterio (criterio volto a premiare l'organizzazione strutturale propria dell'offerente).</div>
+        <td class="col-f">
+          <span class="tag tag-rt">RT</span>
+          <div class="doc-sep"></div>
+          <div class="doc-spec">Relazione tecnica: A4, Arial 12, max 20 pag. complessive (escluse copertine), numerate da 1 a 20.<br>Struttura per capitoli (art. 17). Firma digitale.</div>
+          <div style="margin-top:5px;"><span class="tag tag-pag">⚑ Limite 20 facciate condiviso</span></div>
+        </td>
+      </tr>
+
+      <!-- 4.2 -->
+      <tr class="row-sub">
+        <td class="col-a stripe-D"></td>
+        <td class="col-b col-num"><span class="num-badge num-D">4.2</span></td>
+        <td class="col-c col-title">Pulizia, ordine del cantiere e restituzione aree di intervento</td>
+        <td class="col-d">
+          Azioni per mantenere il cantiere pulito e ordinato per tutta la durata dei lavori (più fasi, alcune in presenza di attività scolastica) e per la restituzione degli ambienti alla didattica al termine di ciascuna fase.<br><br>
+          <strong>Criteri motivazionali:</strong> valutate positivamente le proposte che descrivono in modo dettagliato le metodologie e gli accorgimenti adottati per mantenere il cantiere in ordine, con particolare attenzione alle fasi in presenza di attività scolastica e nella restituzione degli ambienti ultimati.
+        </td>
+        <td class="col-e col-score">
+          <span class="score-badge score-D">
+            <span class="s-val">6</span>
+            <span class="s-pill">D</span>
+          </span>
+        </td>
+        <td class="col-f">
+          <span class="tag tag-rt">RT</span>
+          <div class="doc-sep"></div>
+          <div class="doc-spec">Relazione tecnica: A4, Arial 12, max 20 pag. complessive (escluse copertine), numerate da 1 a 20.<br>Struttura per capitoli (art. 17). Firma digitale.</div>
+          <div style="margin-top:5px;"><span class="tag tag-pag">⚑ Limite 20 facciate condiviso</span></div>
+        </td>
+      </tr>
+
+      <!-- ══════════ CRITERIO 5 PARENT ══════════ -->
+      <tr class="row-parent">
+        <td class="col-a"></td>
+        <td class="col-b col-num"><strong>5</strong></td>
+        <td class="col-c col-title">Certificazioni</td>
+        <td class="col-d" style="font-style:italic; color:#666; font-size:12px;">In caso di R.T.I. le certificazioni devono essere possedute da tutti i soggetti componenti il raggruppamento.</td>
+        <td class="col-e col-score" style="font-size:12px; color:#444; font-weight:700;">tot. 3 pt T</td>
+        <td class="col-f"></td>
+      </tr>
+
+      <!-- 5.1 -->
+      <tr class="row-sub alt">
+        <td class="col-a stripe-T"></td>
+        <td class="col-b col-num"><span class="num-badge num-T">5.1</span></td>
+        <td class="col-c col-title">Possesso certificazione ISO 45001 per la gestione della sicurezza e della salute sul luogo di lavoro</td>
+        <td class="col-d">
+          <strong>Scala tabellare:</strong><br>
+          • <strong>1 pt</strong> — Certificazione ISO 45001 posseduta e prodotta<br>
+          • <strong>0 pt</strong> — Certificazione assente o non prodotta<br><br>
+          Il punteggio è assegnato automaticamente e in valore assoluto. In caso di R.T.I.: tutti i soggetti del raggruppamento devono possedere la certificazione.
+        </td>
+        <td class="col-e col-score">
+          <span class="score-badge score-T">
+            <span class="s-val">1</span>
+            <span class="s-pill">T</span>
+          </span>
+        </td>
+        <td class="col-f">
+          <span class="tag tag-bus">BUSTA B</span>
+          <span class="tag tag-obl">Comprova obbligatoria</span>
+          <div class="doc-sep"></div>
+          <div class="doc-spec">
+            Copia della certificazione ISO 45001 in corso di validità, rilasciata da organismo accreditato, inserita nella Busta B (Offerta Tecnica) negli appositi spazi sulla PAD.<br>
+            <strong>In caso di RTI:</strong> copia per ogni componente del raggruppamento.<br>
+            <strong>Assenza = 0 pt</strong> (tabellare, automatico).<br>
+            Non sanabile con soccorso istruttorio (è parte dell'offerta tecnica).
+          </div>
+        </td>
+      </tr>
+
+      <!-- 5.2 -->
+      <tr class="row-sub">
+        <td class="col-a stripe-T"></td>
+        <td class="col-b col-num"><span class="num-badge num-T">5.2</span></td>
+        <td class="col-c col-title">Possesso della certificazione UNI/PdR 125:2022 sulla parità di genere (o equivalente)</td>
+        <td class="col-d">
+          <strong>Scala tabellare:</strong><br>
+          • <strong>2 pt</strong> — Certificazione UNI/PdR 125:2022 (o equivalente) posseduta e prodotta<br>
+          • <strong>0 pt</strong> — Certificazione assente o non prodotta<br><br>
+          Sono ammesse certificazioni equivalenti riconosciute a livello nazionale o internazionale, rilasciate da organismo accreditato. In caso di R.T.I.: tutti i soggetti del raggruppamento devono possedere la certificazione.
+        </td>
+        <td class="col-e col-score">
+          <span class="score-badge score-T">
+            <span class="s-val">2</span>
+            <span class="s-pill">T</span>
+          </span>
+        </td>
+        <td class="col-f">
+          <span class="tag tag-bus">BUSTA B</span>
+          <span class="tag tag-obl">Comprova obbligatoria</span>
+          <div class="doc-sep"></div>
+          <div class="doc-spec">
+            Copia della certificazione UNI/PdR 125:2022 (o equivalente) in corso di validità, rilasciata da organismo accreditato, inserita nella Busta B (Offerta Tecnica) negli appositi spazi sulla PAD.<br>
+            <strong>In caso di RTI:</strong> copia per ogni componente del raggruppamento.<br>
+            <strong>Assenza = 0 pt</strong> (tabellare, automatico).<br>
+            Non sanabile con soccorso istruttorio (è parte dell'offerta tecnica).
+          </div>
         </td>
       </tr>
 
@@ -711,16 +508,14 @@
   </table>
   </div><!-- /table-wrap -->
 
-  <!-- FOOTER -->
-  <div class="page-footer">
-    <h3>📁 Documenti analizzati</h3>
-    <p>Disciplinare di gara (86 pagine, firmato digitalmente il 24.03.2026 – Gabriella Mariani, Dirigente Servizio Lavori e Servizi di Ingegneria e Architettura, CRC Regione Autonoma della Sardegna).</p>
-    <p style="margin-top:8px;"><strong>Note sulle comprove obbligatorie:</strong> Per i criteri tabellari (T) con comprova obbligatoria (criteri 2, 7, 8, 9, 10, 11), la mancanza della documentazione a comprova entro il termine di scadenza delle offerte comporta la non attribuzione del punteggio. Per l'offerta tecnica non è applicabile il soccorso istruttorio. L'avvalimento premiale è consentito per i criteri 8 e 9; è espressamente escluso per il criterio 10 e non previsto per gli altri criteri tabellari.</p>
-    <p style="margin-top:6px;"><strong>Soglia di sbarramento:</strong> Il concorrente è escluso dalla procedura se consegue un punteggio inferiore a 20 punti sul Criterio 1 "Organizzazione, elementi metodologici e gestione dei cantieri".</p>
-    <p style="margin-top:6px;"><strong>Metodo di attribuzione coefficiente offerta tecnica:</strong> Criteri D → metodo aggregativo compensatore (media aritmetica dei coefficienti dei commissari, scala 0–1 per livelli: Insufficiente/Mediocre/Sufficiente/Buono/Ottimo). Criteri T → valore assoluto fisso in presenza dell'elemento richiesto. Nessuna riparametrazione prevista.</p>
-    <p style="margin-top:6px; color:#777; font-size:11px;">Tabella generata da: Disciplinare di gara CRC Sardegna – AQ Manutenzione AREA Sant'Elia 2026-2028 · Versione 1.0</p>
-  </div>
+</div><!-- /wrapper -->
 
-</div>
+<footer>
+  <strong>Documento analizzato:</strong> Disciplinare di gara telematica – Provincia di Vercelli – prot. 9364 del 25/03/2026<br>
+  <strong>Note comprove obbligatorie:</strong> Le certificazioni di cui ai criteri 5.1 e 5.2 sono elementi tabellari (T): il punteggio è assegnato o azzerato automaticamente in base alla presenza/assenza del documento nella Busta B. L'omissione non è sanabile con soccorso istruttorio (art. 13 del Disciplinare). In caso di RTI tutti i componenti devono possedere le certificazioni.<br>
+  <strong>Metodo di valutazione criteri D:</strong> Metodo aggregativo compensatore (formula C(a) = Σn[Wi × V(a)i]); coefficienti V(a)i attribuiti dalla Commissione su scala 0,00–1,00 (11 livelli: da "Non classificabile" 0,00 a "Ottimo" 1,00). Nessuna riparametrazione prevista.<br>
+  <strong>Metodo di attribuzione punteggio economico:</strong> Metodo bilineare (art. 17.3); soglia = media aritmetica dei ribassi offerti; X = 0,90.
+</footer>
+
 </body>
 </html>
